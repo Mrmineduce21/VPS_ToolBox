@@ -38,9 +38,9 @@ fi
 clear
 
    echo -e "${green}=====================================================================${plain} "
-   echo -e "${green}@            VPS常用脚本集合          TG@oracle_abc                 @${plain} "
-   echo -e "${green}@                                                                   @${plain} "
-   echo -e "${green}@   1.BBr一键脚本                     2.流媒体检测脚本               @${plain} "
+   echo -e "${green}@            VPS常用脚本集合          TG@oracle_abc                  @${plain} "
+   echo -e "${green}@                                                                    @${plain} "
+   echo -e "${green}@   1.BBR一键脚本                     2.流媒体检测脚本               @${plain} "
    echo -e "${green}@   3.服务器测试脚本                  4.安装宝塔7.7原版              @${plain} "
    echo -e "${green}@   5.宝塔7.7破解脚本                 6.XUI一键安装脚本              @${plain} "
    echo -e "${green}@   7.甲骨文DD_Debian11               8.甲骨文DD_WIN7                @${plain} "
