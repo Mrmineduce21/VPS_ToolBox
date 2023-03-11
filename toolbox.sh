@@ -1,48 +1,91 @@
 #!/bin/bash
 
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+plain='\033[0m'
+
+#Check_OS
+# check root
+[[ $EUID -ne 0 ]] && echo -e "${red}错误：${plain} 必须使用root用户运行此脚本！\n" && exit 1
+# check os
+if [[ -f /etc/redhat-release ]]; then
+    release="centos"
+elif cat /etc/issue | grep -Eqi "debian"; then
+    release="debian"
+elif cat /etc/issue | grep -Eqi "ubuntu"; then
+    release="ubuntu"
+elif cat /etc/issue | grep -Eqi "centos|red hat|redhat"; then
+    release="centos"
+elif cat /proc/version | grep -Eqi "debian"; then
+    release="debian"
+elif cat /proc/version | grep -Eqi "ubuntu"; then
+    release="ubuntu"
+elif cat /proc/version | grep -Eqi "centos|red hat|redhat"; then
+    release="centos"
+else
+    echo -e "${red}未检测到系统版本，请联系脚本作者！${plain}\n" && exit 1
+fi
+
+#Install base
+  echo -e "${yellow}install_base${plain} "
+    if [[ x"${release}" == x"centos" ]]; then
+        yum install epel-release -y
+        yum install wget socat bc curl sudo -y
+    else
+    apt-get install wget socat bc curl sudo -y
+    fi
+
+clear
+
+
+
+
+
+
 echo "请输入数字1-10："
 read input
 
 case $input in
   1)
-    echo "运行脚本A"
-    sh script_a.sh
+    echo "你选择的是BBR一键脚本"
+    wget -N --no-check-certificate "https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/4f9957ae23f5efb2bb7c57a198ae2cffebfb1c56/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
     ;;
   2)
-    echo "运行脚本B"
-    sh script_b.sh
+    echo "你选择的是流媒体检测"
+    bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
     ;;
   3)
-    echo "运行脚本C"
-    sh script_c.sh
+    echo "你选择的是秋水逸冰大佬的写的Bench.sh脚本"
+    wget -qO- bench.sh | bash
     ;;
   4)
-    echo "运行脚本D"
-    sh script_d.sh
+    echo "你选择的是安装宝塔7.7原版"
+    curl -sSO https://raw.githubusercontent.com/zhucaidan/btpanel-v7.7.0/main/install/install_panel.sh && bash install_panel.sh
     ;;
   5)
-    echo "运行脚本E"
-    sh script_e.sh
+    echo "你选择的是宝塔7.7破解脚本"
+    curl -sSO https://cdn.cheshirex.com/uploads/sh/one_key_happy.sh && bash one_key_happy.sh
     ;;
   6)
-    echo "运行脚本F"
-    sh script_f.sh
+    echo "你选择的是XUI一键安装脚本"
+    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
     ;;
   7)
-    echo "运行脚本G"
-    sh script_g.sh
+    echo "甲骨文DD_Debian11_默认密码【MoeClub.org】"
+    bash <(wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh') -d 11 -v 64 -a -firmware
     ;;
   8)
-    echo "运行脚本H"
-    sh script_h.sh
+    echo "甲骨文DD_Windows_7_SP1【默认用户名：Administrator 密码：www.nat.ee】"
+    wget --no-check-certificate -qO InstallNET.sh 'http://d.nat.ee/sh/InstallNET.sh' && bash InstallNET.sh -dd 'http://d.nat.ee/oracle/Uefi-gpt-Win7-Ent.gz'
     ;;
   9)
-    echo "运行脚本I"
-    sh script_i.sh
+    echo "一键安装DDNS"
+    wget -qO- https://raw.githubusercontent.com/JasonHe/ddns/main/ddns.sh | bash
     ;;
   10)
-    echo "运行脚本J"
-    sh script_j.sh
+    echo "Xray一键安装【一键搭建节点】"
+    bash <(curl -Ls https://raw.githubusercontent.com/atrandys/xray/main/install_triple_config.sh)
     ;;
   *)
     echo "输入无效数字！"
