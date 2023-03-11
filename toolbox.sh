@@ -37,20 +37,19 @@ fi
 
 clear
 
-   echo -e "${green}=======================================================================${plain} "
-   echo -e "${green}==            VPS常用脚本集合          TG@oracle_abc                  ==${plain} "
-   echo -e "${green}==                                                                   ==${plain} "
-   echo -e "${green}==   1.BBR一键脚本                     2.流媒体检测脚本               ==${plain} "
-   echo -e "${green}==                                                                   ==${plain} "
-   echo -e "${green}==   3.服务器测试脚本                  4.安装宝塔7.7原版              ==${plain} "
-   echo -e "${green}==                                                                   ==${plain} "
-   echo -e "${green}==   5.宝塔7.7破解脚本                 6.XUI一键安装脚本              ==${plain} "
-   echo -e "${green}==                                                                   ==${plain} "
-   echo -e "${green}==   7.甲骨文DD_Debian11               8.甲骨文DD_Windows7           ==${plain} "
-   echo -e "${green}==                                                                   ==${plain} "
-   echo -e "${green}==   9.一键安装DDNS_GO                 10.Xray一键搭建节点            ==${plain} "
-   echo -e "${green}==                                                                   ==${plain} "
-   echo -e "${green}=======================================================================${plain} "
+   echo -e "${green}=====================================================================${plain} "
+   echo -e "${green}@            VPS常用脚本集合          TG@oracle_abc                 @${plain} "
+   echo -e "${green}@                                                                   @${plain} "
+   echo -e "${green}@   1.BBr一键脚本                     2.流媒体检测脚本               @${plain} "
+   echo -e "${green}@                                                                   @${plain} "
+   echo -e "${green}@   3.服务器测试脚本                  4.安装宝塔7.7原版              @${plain} "
+   echo -e "${green}@                                                                   @${plain} "
+   echo -e "${green}@   5.宝塔7.7破解脚本                 6.XUI一键安装脚本              @${plain} "
+   echo -e "${green}@                                                                   @${plain} "
+   echo -e "${green}@   7.甲骨文DD_Debian11               8.甲骨文DD_WIN7               @${plain} "
+   echo -e "${green}@                                                                   @${plain} "
+   echo -e "${green}@   9.一键安装DDNS_GO                 10.XRAY一键搭建节点            @${plain} "
+   echo -e "${green}=====================================================================${plain} "
    
    
    echo -e "${yellow}  均搜集自互联网，侵权请联系删除 ${plain} "
@@ -86,10 +85,14 @@ case $input in
     ;;
   7)
     echo "甲骨文DD_Debian11_默认密码【MoeClub.org】"
+        echo "30秒后开始执行"
+    sleep 30
     bash <(wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh') -d 11 -v 64 -a -firmware
     ;;
   8)
     echo "甲骨文DD_Windows_7_SP1【默认用户名：Administrator 密码：www.nat.ee】"
+    echo "30秒后开始执行"
+    sleep 30
     wget --no-check-certificate -qO InstallNET.sh 'http://d.nat.ee/sh/InstallNET.sh' && bash InstallNET.sh -dd 'http://d.nat.ee/oracle/Uefi-gpt-Win7-Ent.gz'
     ;;
   9)
