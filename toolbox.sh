@@ -5,7 +5,6 @@ green='\033[0;32m'
 yellow='\033[0;33m'
 plain='\033[0m'
 
-#Check_OS
 # check root
 [[ $EUID -ne 0 ]] && echo -e "${red}错误：${plain} 必须使用root用户运行此脚本！\n" && exit 1
 # check os
@@ -38,9 +37,23 @@ fi
 
 clear
 
-
-
-
+   echo -e "${green}=======================================================================${plain} "
+   echo -e "${green}==            VPS常用脚本集合          TG@oracle_abc                  ==${plain} "
+   echo -e "${green}==                                                                   ==${plain} "
+   echo -e "${green}==   1.BBR一键脚本                     2.流媒体检测脚本               ==${plain} "
+   echo -e "${green}==                                                                   ==${plain} "
+   echo -e "${green}==   3.服务器测试脚本                  4.安装宝塔7.7原版              ==${plain} "
+   echo -e "${green}==                                                                   ==${plain} "
+   echo -e "${green}==   5.宝塔7.7破解脚本                 6.XUI一键安装脚本              ==${plain} "
+   echo -e "${green}==                                                                   ==${plain} "
+   echo -e "${green}==   7.甲骨文DD_Debian11               8.甲骨文DD_Windows7           ==${plain} "
+   echo -e "${green}==                                                                   ==${plain} "
+   echo -e "${green}==   9.一键安装DDNS_GO                 10.Xray一键搭建节点            ==${plain} "
+   echo -e "${green}==                                                                   ==${plain} "
+   echo -e "${green}=======================================================================${plain} "
+   
+   
+   echo -e "${yellow}  均搜集自互联网，侵权请联系删除 ${plain} "
 
 
 echo "请输入数字1-10："
@@ -80,7 +93,7 @@ case $input in
     wget --no-check-certificate -qO InstallNET.sh 'http://d.nat.ee/sh/InstallNET.sh' && bash InstallNET.sh -dd 'http://d.nat.ee/oracle/Uefi-gpt-Win7-Ent.gz'
     ;;
   9)
-    echo "一键安装DDNS"
+    echo "一键安装DDNS_GO"
     wget -qO- https://raw.githubusercontent.com/JasonHe/ddns/main/ddns.sh | bash
     ;;
   10)
