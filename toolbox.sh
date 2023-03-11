@@ -45,6 +45,7 @@ clear
    echo -e "${green}@   5.宝塔7.7破解脚本                 6.XUI一键安装脚本              @${plain} "
    echo -e "${green}@   7.甲骨文DD_Debian11               8.甲骨文DD_WIN7                @${plain} "
    echo -e "${green}@   9.一键安装DDNS_GO                 10.XRAY一键搭建节点            @${plain} "
+   echo -e "${green}@   11.一键安装Docker                 12.甲骨文保活(一键脚本)        @${plain} "
    echo -e "${green}=====================================================================${plain} "
    
    
@@ -98,6 +99,14 @@ case $input in
   10)
     echo "Xray一键安装【一键搭建节点】"
     bash <(curl -Ls https://raw.githubusercontent.com/atrandys/xray/main/install_triple_config.sh)
+    ;;
+  11)
+    echo "一键安装Docker"
+    curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
+    ;;
+  12)
+    echo "甲骨文保活(一键脚本)"
+    echo "还在写"
     ;;
   *)
     echo "输入无效数字！"
