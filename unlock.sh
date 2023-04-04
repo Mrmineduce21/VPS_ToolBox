@@ -11,15 +11,15 @@ unlock(){
 if grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
     yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     yum install bind-utils
-    echo y | yum install -y dnsmasq
+    wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -id
 elif grep -Eqi "Debian" /etc/issue || grep -Eq "Debian" /etc/*-release; then
     apt-get update
     apt-get install dnsutils
-    apt install -y dnsmasq
+    wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -id
 elif grep -Eqi "Ubuntu" /etc/issue || grep -Eq "Ubuntu" /etc/*-release; then
     apt-get update
     apt-get install dnsutils
-    apt install -y dnsmasq
+    wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -id
 else
     echo "This script only supports CentOS, Ubuntu and Debian."
     exit 1
