@@ -101,3 +101,8 @@ iptables配置文件/etc/sysconfig/iptables，修改重启服务生效service ip
 https://github.com/myxuchangbin/dnsmasq_sniproxy_install  
 https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/sniproxy.conf
 
+======================================================================
+
+# 检测脚本
+wget -N --no-check-certificate "https://raw.githubusercontent.com/Mrmineduce21/VPS_ToolBox/main/check.sh" && chmod +X toolbox.sh && bash check.sh
+
