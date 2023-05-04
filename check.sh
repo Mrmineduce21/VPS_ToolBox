@@ -363,6 +363,10 @@ print_Netflix_check
 #分割线
 next
  
+ curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
+ 
+ next
+
  
  
  
