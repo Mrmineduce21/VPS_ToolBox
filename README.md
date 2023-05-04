@@ -104,5 +104,5 @@ https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/s
 ======================================================================
 
 # 检测脚本
-wget -N --no-check-certificate "https://raw.githubusercontent.com/Mrmineduce21/VPS_ToolBox/main/check.sh" && chmod +X toolbox.sh && bash check.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/Mrmineduce21/VPS_ToolBox/main/check.sh" && chmod +X check.sh && bash check.sh
 
