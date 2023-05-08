@@ -98,8 +98,18 @@ done
     ;;
   8)
     echo "甲骨文DD_Windows_7_SP1【默认用户名：Administrator 密码：www.nat.ee】"
-    echo "30秒后开始执行"
-    sleep 30
+
+        echo "30秒后开始执行"
+        countdown=30
+        while [ $countdown -gt 0 ]
+do
+    clear
+
+echo "误操作请断开终端或Ctrl+C终止|【默认用户名：Administrator 密码：www.nat.ee】"
+  echo "倒计时: $countdown 秒"
+  sleep 1
+  ((countdown--))
+done
     wget --no-check-certificate -qO InstallNET.sh 'http://d.nat.ee/sh/InstallNET.sh' && bash InstallNET.sh -dd 'http://d.nat.ee/oracle/Uefi-gpt-Win7-Ent.gz'
     ;;
   9)
