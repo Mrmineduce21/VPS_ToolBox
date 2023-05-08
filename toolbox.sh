@@ -83,7 +83,17 @@ case $input in
   7)
     echo "甲骨文DD_Debian11_默认密码【MoeClub.org】"
         echo "30秒后开始执行"
-    sleep 30
+        countdown=30
+        while [ $countdown -gt 0 ]
+do
+    clear
+
+echo "误操作请断开终端或Ctrl+C终止|默认密码【MoeClub.org】"
+  echo "倒计时: $countdown 秒"
+  sleep 1
+  ((countdown--))
+done
+  
     bash <(wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh') -d 11 -v 64 -a -firmware
     ;;
   8)
