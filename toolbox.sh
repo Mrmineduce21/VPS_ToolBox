@@ -65,8 +65,8 @@ case $input in
     bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
     ;;
   3)
-    echo "你选择的是秋水逸冰大佬的写的Bench.sh脚本"
-    wget -qO- bench.sh | bash
+   clear
+    wget -N --no-check-certificate "https://raw.githubusercontent.com/Mrmineduce21/VPS_ToolBox/main/check.sh" && chmod +X check.sh && bash check.sh
     ;;
   4)
     echo "你选择的是安装宝塔7.7原版"
